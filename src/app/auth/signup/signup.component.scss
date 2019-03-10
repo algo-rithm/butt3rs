@@ -1,0 +1,37 @@
+$childWidth: 200px;
+
+
+mat-form-field {
+  width: 300px;
+}
+
+
+#container {
+  display: flex;
+  //sets Main Axis
+  flex-direction: row;
+  //sets alignment along Main Axis
+  justify-content: center;
+  //sets alignment along Cross Axis
+  align-items: center;
+}
+
+.child {
+  width: $childWidth;
+  height: 200px;
+  background-color: red;
+}
+
+#child1 {
+  background-color: red;
+  /* flex: 1; */
+}
+
+#child2 {
+  background-color: blue;
+  /* flex: 2; */
+}
+
+#child3 {
+  background-color: green;
+}
