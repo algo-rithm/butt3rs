@@ -10,7 +10,6 @@
       "prefix": "pnut",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineStyle": true,
           "style": "scss"
         }
       },

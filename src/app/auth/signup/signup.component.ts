@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms/src/directives/ng_form';
+import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms/src/directives/ng_form";
 
-import { AuthService } from '../auth.service';
+import { AuthService } from "../auth.service";
 
 @Component({
-  selector: 'pnut-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  selector: "pnut-signup",
+  templateUrl: "./signup.component.html",
+  styleUrls: ["./signup.component.scss"]
 })
 export class SignupComponent implements OnInit {
-  maxDate;
+  maxDate: Date;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.maxDate = new Date();
@@ -19,10 +19,11 @@ export class SignupComponent implements OnInit {
   }
 
   onSumbit(form: NgForm) {
-    this.authService.registerUser({
-      email: form.value.email,
-      password: form.value.password
-    })
+    if (form.valid) {
+      this.authService.registerUser({
+        email: form.value.email,
+        password: form.value.password
+      });
+    }
   }
-
 }
